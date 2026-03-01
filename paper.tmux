@@ -56,7 +56,7 @@ main() {
 
   tmux set-option -gq @paper_left_border "$(get_tmux_option "@paper_left_border" "")"
   tmux set-option -gq @paper_right_border "$(get_tmux_option "@paper_right_border" "")"
-  tmux set-option -gq @paper_session_icon "$(get_tmux_option "@paper_session_icon" "")"
+  tmux set-option -gq @paper_session_icon "$(get_tmux_option "@paper_session_icon" "☕")"
   tmux set-option -gq @paper_active_window_icon "$(get_tmux_option "@paper_active_window_icon" "")"
   tmux set-option -gq @paper_inactive_window_icon "$(get_tmux_option "@paper_inactive_window_icon" "")"
 
