@@ -59,16 +59,16 @@ main() {
   tmux set-option -gq @paper_session_icon "$(get_tmux_option "@paper_session_icon" "")"
   tmux set-option -gq @paper_active_window_icon "$(get_tmux_option "@paper_active_window_icon" "")"
   tmux set-option -gq @paper_inactive_window_icon "$(get_tmux_option "@paper_inactive_window_icon" "")"
-  
+
   tmux set-option -g window-status-separator " "
-  
+
   tmux set-option -g window-status-current-style "fg=#{@paper_foreground},bg=#{@paper_gray}"
   tmux set-option -g window-status-style "fg=#{@paper_background},bg=default"
-  
-  tmux set-option -g window-status-format "#[fg=#{@paper_gray},bg=default]#{@paper_left_border}#[fg=white,bg=#{@paper_gray}] #{@paper_inactive_window_icon} #W #[fg=#{@paper_gray},bg=default]#{@paper_right_border}"
-  tmux set-option -g window-status-current-format "#[fg=#{@paper_purple},bg=#{@paper_background}]#{@paper_left_border}#[fg=#{@paper_background},bg=#{@paper_purple}] #{@paper_active_window_icon} #W #[fg=#{@paper_purple},bg=#{@paper_background}]#{@paper_right_border}"
-  
-  tmux set-option -g status-left "#[bg=#{@paper_green},fg=#{@paper_background}]  #{@paper_session_icon} #S #[fg=#{@paper_green},bg=default]#{@paper_right_border} "
+
+  tmux set-option -g window-status-format "#[fg=#{@paper_gray},bg=default]#{@paper_left_border}#[fg=white,bg=#{@paper_gray}]#{?#{!=:#{@paper_inactive_window_icon},}, #{@paper_inactive_window_icon},} #W #[fg=#{@paper_gray},bg=default]#{@paper_right_border}"
+  tmux set-option -g window-status-current-format "#[fg=#{@paper_purple},bg=#{@paper_background}]#{@paper_left_border}#[fg=#{@paper_background},bg=#{@paper_purple}]#{?#{!=:#{@paper_active_window_icon},}, #{@paper_active_window_icon},} #W #[fg=#{@paper_purple},bg=#{@paper_background}]#{@paper_right_border}"
+
+  tmux set-option -g status-left "#[bg=#{@paper_green},fg=#{@paper_background}]#{?#{!=:#{@paper_session_icon},}, #{@paper_session_icon},} #S #[fg=#{@paper_green},bg=default]#{@paper_right_border} "
   
   tmux set-option -g status-bg default
   tmux set-option -g status-style "bg=default,fg=#{@paper_foreground}"
