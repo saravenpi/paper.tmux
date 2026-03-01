@@ -16,6 +16,10 @@ A warm, café-inspired tmux theme with paper tones and rich mocha/coffee brown a
 
 <div align="center">
 
+### 🎨 Interactive Color Palettes
+
+**[→ View Light Mode Palette](https://coolors.co/faf6f0-4a3728-a36969-7a9048-d4923a-5a7f94-e8dcc8)** | **[→ View Dark Mode Palette](https://coolors.co/2a1f1a-e8dcc8-b57a7a-8ca558-d4923a-5a7f94-3d2d22)**
+
 ### Color Palette
 
 | Color | Light Mode | Dark Mode |
