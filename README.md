@@ -88,7 +88,7 @@ Options: `"light"` or `"dark"`
 ### Custom Icons
 
 By default, the theme includes these icons:
-- Session icon: ☕ (coffee cup)
+- Session icon: ◆ (diamond)
 - Active window: ● (filled circle)
 - Inactive window: ○ (hollow circle)
 - Borders: empty (clean look)
@@ -98,7 +98,7 @@ You can customize any of these icons:
 ```tmux
 set -g @paper_left_border ""
 set -g @paper_right_border ""
-set -g @paper_session_icon "☕"
+set -g @paper_session_icon "◆"
 set -g @paper_active_window_icon "●"
 set -g @paper_inactive_window_icon "○"
 ```
