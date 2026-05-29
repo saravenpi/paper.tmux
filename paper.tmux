@@ -17,23 +17,23 @@ main() {
   local theme=$(get_tmux_option "@paper_theme" "light")
 
   if [[ "$theme" == "light" ]]; then
-    tmux set-option -gq @paper_purple "#a36969"
-    tmux set-option -gq @paper_green "#7a9048"
-    tmux set-option -gq @paper_orange "#d4923a"
-    tmux set-option -gq @paper_yellow "#c47f2c"
+    tmux set-option -gq @paper_purple "#945c5c"
+    tmux set-option -gq @paper_green "#6a8038"
+    tmux set-option -gq @paper_orange "#a87018"
+    tmux set-option -gq @paper_yellow "#9a6510"
     tmux set-option -gq @paper_blue "#5a7f94"
-    tmux set-option -gq @paper_gray "#e8dcc8"
+    tmux set-option -gq @paper_gray "#d8c8ae"
     tmux set-option -gq @paper_background "#faf6f0"
     tmux set-option -gq @paper_foreground "#4a3728"
 
     tmux set-option -gq @paper_wisp_running_fg "#faf6f0"
     tmux set-option -gq @paper_wisp_running_bg "#5a7f94"
     tmux set-option -gq @paper_wisp_paused_fg "#faf6f0"
-    tmux set-option -gq @paper_wisp_paused_bg "#d4923a"
+    tmux set-option -gq @paper_wisp_paused_bg "#a87018"
     tmux set-option -gq @paper_wisp_completed_fg "#faf6f0"
-    tmux set-option -gq @paper_wisp_completed_bg "#7a9048"
+    tmux set-option -gq @paper_wisp_completed_bg "#6a8038"
     tmux set-option -gq @paper_wisp_inactive_fg "#4a3728"
-    tmux set-option -gq @paper_wisp_inactive_bg "#e8dcc8"
+    tmux set-option -gq @paper_wisp_inactive_bg "#d8c8ae"
   else
     tmux set-option -gq @paper_purple "#b57a7a"
     tmux set-option -gq @paper_green "#8ca558"
@@ -74,6 +74,15 @@ main() {
   tmux set-option -g status-style "bg=default,fg=#{@paper_foreground}"
 
   tmux set-option -g status-interval 1
+
+  local fzf_bg=$(tmux show-option -gqv @paper_background)
+  local fzf_fg=$(tmux show-option -gqv @paper_foreground)
+  local fzf_gray=$(tmux show-option -gqv @paper_gray)
+  local fzf_green=$(tmux show-option -gqv @paper_green)
+  local fzf_yellow=$(tmux show-option -gqv @paper_yellow)
+  local fzf_orange=$(tmux show-option -gqv @paper_orange)
+
+  tmux set-environment -g FZF_DEFAULT_OPTS "--color=bg+:${fzf_gray},bg:${fzf_bg},spinner:${fzf_orange},hl:${fzf_green} --color=fg:${fzf_fg},header:${fzf_green},info:${fzf_yellow},pointer:${fzf_orange} --color=marker:${fzf_orange},fg+:${fzf_fg},prompt:${fzf_yellow},hl+:${fzf_green} --color=border:${fzf_gray},gutter:${fzf_bg} --prompt='› ' --pointer='▶' --marker='✓' --layout=reverse --height=60%"
 }
 
 main
